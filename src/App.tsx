@@ -16,6 +16,12 @@ const LinkedinIcon = () => (
     <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
   </svg>
 );
+const FileIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+    <path d="M14 2v6h6M9 13h6M9 17h6" />
+  </svg>
+);
 const ArrowIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="M7 17 17 7M9 7h8v8" />
@@ -125,6 +131,7 @@ export default function App() {
           <a href="#work">Work</a>
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
+          <a href="/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
           <a href="#contact" className="nav-cta">Get in touch</a>
         </div>
       </nav>
@@ -169,8 +176,14 @@ export default function App() {
             <a className="btn" href={LINKEDIN} target="_blank" rel="noreferrer">
               <LinkedinIcon /> LinkedIn
             </a>
+            <a className="btn" href="/resume.pdf" target="_blank" rel="noreferrer">
+              <FileIcon /> Resume
+            </a>
           </div>
-          <a className="scroll-hint" href="#work" aria-label="Scroll to projects">▾</a>
+          <a className="scroll-hint" href="#work">
+            <span>scroll — selected work</span>
+            <i>▾</i>
+          </a>
         </header>
 
         {/* ------------------------------------------------ projects */}
@@ -329,6 +342,9 @@ export default function App() {
               </a>
               <a className="btn" href={GITHUB} target="_blank" rel="noreferrer">
                 <GithubIcon /> GitHub
+              </a>
+              <a className="btn" href="/resume.pdf" download="Nischay-Prasher-Resume.pdf">
+                <FileIcon /> Download resume
               </a>
             </div>
           </div>

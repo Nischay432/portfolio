@@ -176,7 +176,7 @@ export function MazePreview() {
     <div className="mini-window">
       <div className="mini-bar">
         <i /><i /><i />
-        <span className="mini-url">maze-rush.nischay432.workers.dev</span>
+        <span className="mini-url">maze.tinygridlabs.com</span>
       </div>
       <canvas ref={ref} className="maze-canvas" style={{ aspectRatio: `${W * 30 + 20} / ${H * 30 + 20}` }} />
     </div>

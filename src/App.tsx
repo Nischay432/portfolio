@@ -219,7 +219,7 @@ export default function App() {
                     <span className="tech-chip">Canvas</span>
                   </div>
                   <div className="project-links">
-                    <a className="btn btn-primary" href="https://maze-rush.nischay432.workers.dev" target="_blank" rel="noreferrer">
+                    <a className="btn btn-primary" href="https://maze.tinygridlabs.com" target="_blank" rel="noreferrer">
                       Play live <ArrowIcon />
                     </a>
                     <a className="btn" href={`${GITHUB}/maze-rush`} target="_blank" rel="noreferrer">

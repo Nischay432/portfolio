@@ -1,5 +1,10 @@
 {
   "name": "portfolio",
   "compatibility_date": "2026-07-01",
-  "assets": { "directory": "./dist" }
+  "assets": { "directory": "./dist" },
+  "routes": [
+    { "pattern": "tinygridlabs.com", "custom_domain": true },
+    { "pattern": "www.tinygridlabs.com", "custom_domain": true }
+  ],
+  "workers_dev": true
 }

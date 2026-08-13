@@ -92,6 +92,26 @@ function TiltCard({ children }: { children: React.ReactNode }) {
   );
 }
 
+const MerlinPreview = () => (
+  <div className="mini-window">
+    <div className="mini-bar">
+      <i /><i /><i />
+      <span className="mini-url">merlin — flyct internal</span>
+    </div>
+    <div className="mini-chat">
+      <div className="chat-msg chat-user">why is the hotel card missing a cancellation badge?</div>
+      <div className="chat-pipeline">
+        <span>intent</span><b>→</b><span>retrieve</span><b>→</b><span>humanize</span>
+      </div>
+      <div className="chat-msg chat-bot">
+        <code>refundability.type</code> is <code>"NON_REFUNDABLE"</code>, so the badge is
+        hidden by design.
+        <span className="chat-source">source: rooms[0].ratePlans[0]</span>
+      </div>
+    </div>
+  </div>
+);
+
 const NextractPreview = () => (
   <div className="mini-window">
     <div className="mini-bar">
@@ -192,8 +212,8 @@ export default function App() {
             <p className="section-kicker reveal">Selected work</p>
             <h2 className="section-title reveal">Things I've built</h2>
             <p className="section-lede reveal">
-              Real products, live on the internet — not just repos. Both previews
-              below are rendered by this page itself.
+              Real products in production — not just repos. Every preview
+              below is rendered by this page itself.
             </p>
 
             <div className="project-grid">
@@ -266,6 +286,34 @@ export default function App() {
                   <NextractPreview />
                 </div>
               </TiltCard>
+
+              <TiltCard>
+                <div className="project-info">
+                  <span className="project-index">03 — ai assistant · 2nd place, FlyCT AI Hackathon 2026</span>
+                  <h3>Merlin Copilot</h3>
+                  <p className="project-desc">
+                    An AI assistant that answers natural-language questions over
+                    trip-response JSON, killing JSON-to-UI debugging overhead. The
+                    pipeline — LLM intent detection →{' '}
+                    <strong>deterministic retrieval</strong> → LLM humanization —
+                    keeps every answer <strong>grounded and source-backed by
+                    construction</strong>. Built in a 2-day hackathon, hardened for
+                    production in 2 more, and shipped internally at FlyCT.
+                  </p>
+                  <div className="tech-row">
+                    <span className="tech-chip">React</span>
+                    <span className="tech-chip">Gemini 2.5</span>
+                    <span className="tech-chip">LLM pipeline</span>
+                    <span className="tech-chip">Deterministic retrieval</span>
+                  </div>
+                  <div className="project-links">
+                    <span className="project-note">Shipped to production — internal tool, so no public link</span>
+                  </div>
+                </div>
+                <div className="project-preview">
+                  <MerlinPreview />
+                </div>
+              </TiltCard>
             </div>
           </div>
         </section>
@@ -283,9 +331,10 @@ export default function App() {
                 <p className="reveal">
                   I'm a frontend engineer who enjoys transforming complex business
                   requirements into <strong>clean, scalable and maintainable</strong> user
-                  experiences. Over the past year I've worked on large-scale frontend
-                  applications, authentication systems, white-label architectures,
-                  admin dashboards, payment workflows and cross-platform mobile development.
+                  experiences. Over the past two years at FlyCT I've led an EJS-to-Next.js
+                  migration, built a unified authentication platform, shipped multibrand
+                  React Native apps, and owned admin dashboards, payment workflows
+                  and Android release engineering.
                 </p>
                 <p className="reveal">
                   I care about the whole journey — from architecture decisions and
@@ -293,8 +342,8 @@ export default function App() {
                   ships under my name, it should feel <strong>fast, obvious and alive</strong>.
                 </p>
                 <div className="stat-row reveal">
-                  <div className="stat"><b>2</b><span>products live in production</span></div>
-                  <div className="stat"><b>1+</b><span>years building for the web</span></div>
+                  <div className="stat"><b>3</b><span>products live in production</span></div>
+                  <div className="stat"><b>2+</b><span>years building for the web</span></div>
                   <div className="stat"><b>∞</b><span>curiosity for what's next</span></div>
                 </div>
               </div>
@@ -312,9 +361,9 @@ export default function App() {
             </p>
             <div className="skill-grid">
               {[
-                'TypeScript', 'JavaScript (ES6+)', 'React', 'Next.js', 'React Native',
-                'Redux Toolkit', 'Zustand', 'Tailwind CSS', 'Material UI', 'Node.js',
-                'PostgreSQL', 'Prisma', 'WebSockets', 'Cloudflare Workers', 'Vercel', 'Git & GitHub',
+                'TypeScript', 'JavaScript (ES6+)', 'React', 'Next.js (App Router, RSC)', 'React Native (Expo)',
+                'Redux Toolkit', 'RTK Query', 'TanStack Query', 'Material UI', 'Tailwind CSS',
+                'Node.js', 'PostgreSQL', 'Prisma', 'WebSockets', 'Cloudflare Workers', 'Vitest',
               ].map((s) => (
                 <div className="skill reveal" key={s}>
                   <i />{s}
